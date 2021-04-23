@@ -20,7 +20,6 @@ my_socket.listen(10)
 conn, addr = my_socket.accept()
 print("Got connection", conn, addr)
 data = conn.recv(1024)
-print("Got data:\n ", data.decode("utf-8"))
 
 conn.send(f"HTTP/1.1 200 OK\n Content-Lenght: 100\n Content-Type: text/html\n\n {data.decode(FORMAT)}".encode(FORMAT))
 
